@@ -73,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 453);
+            this.panel1.Size = new System.Drawing.Size(964, 492);
             this.panel1.TabIndex = 0;
             // 
             // buttonRemoveClient
@@ -131,6 +131,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(519, 316);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+           
             // 
             // textBoxCountry
             // 
@@ -139,6 +140,7 @@
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(220, 26);
             this.textBoxCountry.TabIndex = 2;
+           
             // 
             // label6
             // 
@@ -149,6 +151,7 @@
             this.label6.Size = new System.Drawing.Size(68, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Country:";
+      
             // 
             // textBoxPhone
             // 
@@ -157,6 +160,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(220, 26);
             this.textBoxPhone.TabIndex = 2;
+         
             // 
             // label5
             // 
@@ -167,6 +171,7 @@
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Phone:";
+         
             // 
             // textBoxLastName
             // 
@@ -175,6 +180,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(220, 26);
             this.textBoxLastName.TabIndex = 2;
+
             // 
             // label4
             // 
@@ -185,6 +191,7 @@
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Last Name:";
+      
             // 
             // textBoxFirstName
             // 
@@ -193,6 +200,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(220, 26);
             this.textBoxFirstName.TabIndex = 2;
+     
             // 
             // label3
             // 
@@ -203,6 +211,7 @@
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "First Name:";
+  
             // 
             // textBoxID
             // 
@@ -212,6 +221,7 @@
             this.textBoxID.ReadOnly = true;
             this.textBoxID.Size = new System.Drawing.Size(115, 26);
             this.textBoxID.TabIndex = 2;
+   
             // 
             // label2
             // 
@@ -222,6 +232,7 @@
             this.label2.Size = new System.Drawing.Size(30, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID:";
+
             // 
             // panel2
             // 
@@ -229,7 +240,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 55);
+            this.panel2.Size = new System.Drawing.Size(964, 55);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -239,16 +250,17 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(894, 55);
+            this.label1.Size = new System.Drawing.Size(964, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage Client";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // 
             // ManageClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 453);
+            this.ClientSize = new System.Drawing.Size(964, 492);
             this.Controls.Add(this.panel1);
             this.Name = "ManageClientsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

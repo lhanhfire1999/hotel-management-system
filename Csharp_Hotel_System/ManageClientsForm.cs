@@ -47,6 +47,7 @@ namespace Csharp_Hotel_System
                     //When insert client will sync data of database and  database(client) show on app 
                     dataGridView1.DataSource = client.getClients();
                     MessageBox.Show("New Client Insert Successfully", "Add Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    buttonClearFields.PerformClick();
                 }
                 else
                 {
@@ -89,6 +90,7 @@ namespace Csharp_Hotel_System
                         //When insert client will sync data of database and  database(client) show on app 
                         dataGridView1.DataSource = client.getClients();
                         MessageBox.Show("New Client Updated Successfully", "Edit Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        buttonClearFields.PerformClick();
                     }
                     else
                     {
@@ -137,5 +139,7 @@ namespace Csharp_Hotel_System
                 MessageBox.Show(ex.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }
