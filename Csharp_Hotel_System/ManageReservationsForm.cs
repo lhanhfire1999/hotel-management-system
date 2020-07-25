@@ -16,5 +16,7 @@ namespace Csharp_Hotel_System
         {
             InitializeComponent();
         }
+
+        
     }
 }
