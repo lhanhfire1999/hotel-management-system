@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePickerOUT = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerIN = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.comboBoxRoomNumber = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +47,10 @@
             this.textBoxReservID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerOUT = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +80,16 @@
             this.panel1.Size = new System.Drawing.Size(964, 492);
             this.panel1.TabIndex = 2;
             // 
+            // dateTimePickerOUT
+            // 
+            this.dateTimePickerOUT.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerOUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerOUT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerOUT.Location = new System.Drawing.Point(131, 294);
+            this.dateTimePickerOUT.Name = "dateTimePickerOUT";
+            this.dateTimePickerOUT.Size = new System.Drawing.Size(170, 29);
+            this.dateTimePickerOUT.TabIndex = 8;
+            // 
             // dateTimePickerIN
             // 
             this.dateTimePickerIN.CustomFormat = "dd/MM/yyyy";
@@ -87,6 +99,16 @@
             this.dateTimePickerIN.Name = "dateTimePickerIN";
             this.dateTimePickerIN.Size = new System.Drawing.Size(170, 29);
             this.dateTimePickerIN.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(45, 301);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Date Out:";
             // 
             // comboBoxRoomNumber
             // 
@@ -229,30 +251,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(964, 55);
+            this.panel2.Size = new System.Drawing.Size(964, 56);
             this.panel2.TabIndex = 0;
             // 
-            // label6
+            // label7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 301);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Date Out:";
-            // 
-            // dateTimePickerOUT
-            // 
-            this.dateTimePickerOUT.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerOUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerOUT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerOUT.Location = new System.Drawing.Point(131, 294);
-            this.dateTimePickerOUT.Name = "dateTimePickerOUT";
-            this.dateTimePickerOUT.Size = new System.Drawing.Size(170, 29);
-            this.dateTimePickerOUT.TabIndex = 8;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(964, 56);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Manage Reservations";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ManageReservationsForm
             // 
@@ -266,6 +281,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -291,5 +307,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerOUT;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
