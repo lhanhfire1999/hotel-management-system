@@ -111,5 +111,31 @@ namespace Csharp_Hotel_System
             textBoxPhone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             textBoxCountry.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
+
+        private void buttonRemoveClient_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(textBoxID.Text);
+                if(client.removeClient(id))
+                {
+                    //When insert client will sync data of database and  database(client) show on app 
+                    dataGridView1.DataSource = client.getClients();
+                    MessageBox.Show(" Client delete Successfully", "Delete Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //You can clear all textboxes after delete client
+                    //By call clear button
+                    buttonClearFields.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("ERROR -Client Not Delete ", "Delete Client", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

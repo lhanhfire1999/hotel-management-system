@@ -85,6 +85,7 @@
             this.buttonRemoveClient.TabIndex = 4;
             this.buttonRemoveClient.Text = "Remove";
             this.buttonRemoveClient.UseVisualStyleBackColor = true;
+            this.buttonRemoveClient.Click += new System.EventHandler(this.buttonRemoveClient_Click);
             // 
             // buttonClearFields
             // 
