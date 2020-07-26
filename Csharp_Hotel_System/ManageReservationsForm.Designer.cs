@@ -197,7 +197,7 @@
             this.buttonAddReserv.Name = "buttonAddReserv";
             this.buttonAddReserv.Size = new System.Drawing.Size(152, 35);
             this.buttonAddReserv.TabIndex = 4;
-            this.buttonAddReserv.Text = "Add New Room";
+            this.buttonAddReserv.Text = "Add Reservation";
             this.buttonAddReserv.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
