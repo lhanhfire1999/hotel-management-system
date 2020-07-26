@@ -15,6 +15,7 @@ namespace Csharp_Hotel_System
     class ROOM
     {
         CONNECT conn = new CONNECT();
+        
         // create a function to get a list  of room's type
         public DataTable roomTypeList()
         {
@@ -30,6 +31,56 @@ namespace Csharp_Hotel_System
             adapter.Fill(table);
 
             return table;
+        }
+
+        // create a function to get list of rooms by type
+        public DataTable roomByType(int type)
+        {
+            //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `type`=@typ and `free` ='Yes'", conn.getConnection());
+
+            //DataAdapter chính là cầu nối giữa Dataset và Datasource
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            //@typ
+            command.Parameters.Add("@typ", MySqlDbType.Int32).Value = type;
+
+            //SelectCommand: Cho phép lấy thông tin từ nguồn dữ liệu về
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        // create a function to set room free to NO
+        public bool setRoomFreeToNo(int number)
+        {
+            //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
+            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `free`='No' WHERE `number`=@num", conn.getConnection());
+
+            //DataAdapter chính là cầu nối giữa Dataset và Datasource
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            //@num
+            command.Parameters.Add("@num", MySqlDbType.Int32).Value = number;
+
+            conn.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                conn.closeConnection();
+                return true;
+            }
+            else
+            {
+                conn.closeConnection();
+                return false;
+            }
+
+
+
         }
 
         // create a function to insert a new room
