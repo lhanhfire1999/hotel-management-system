@@ -53,7 +53,27 @@ namespace Csharp_Hotel_System
             return table;
         }
 
-        // create a function to set room free to NO
+        //create a function to return the room type id
+        public int getRoomType(int number)
+        {
+            //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
+            MySqlCommand command = new MySqlCommand("SELECT  `type` FROM `rooms` WHERE `number`=@num", conn.getConnection());
+
+            //DataAdapter chính là cầu nối giữa Dataset và Datasource
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            //@num
+            command.Parameters.Add("@num", MySqlDbType.Int32).Value = number;
+
+            //SelectCommand: Cho phép lấy thông tin từ nguồn dữ liệu về
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return Convert.ToInt32(table.Rows[0][0].ToString());
+        }
+
+        // create a function to set room free column to NO
         public bool setRoomFreeToNo(int number)
         {
             //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server

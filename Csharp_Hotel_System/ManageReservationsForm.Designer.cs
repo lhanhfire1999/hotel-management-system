@@ -46,6 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxReservId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +69,8 @@
             this.panel1.Controls.Add(this.buttonEditReserv);
             this.panel1.Controls.Add(this.buttonAddReserv);
             this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.textBoxReservId);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxClientID);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panel2);
@@ -81,7 +85,7 @@
             this.dateTimePickerOUT.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerOUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerOUT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerOUT.Location = new System.Drawing.Point(131, 251);
+            this.dateTimePickerOUT.Location = new System.Drawing.Point(131, 299);
             this.dateTimePickerOUT.Name = "dateTimePickerOUT";
             this.dateTimePickerOUT.Size = new System.Drawing.Size(170, 29);
             this.dateTimePickerOUT.TabIndex = 8;
@@ -91,7 +95,7 @@
             this.dateTimePickerIN.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerIN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerIN.Location = new System.Drawing.Point(131, 208);
+            this.dateTimePickerIN.Location = new System.Drawing.Point(131, 256);
             this.dateTimePickerIN.Name = "dateTimePickerIN";
             this.dateTimePickerIN.Size = new System.Drawing.Size(170, 29);
             this.dateTimePickerIN.TabIndex = 8;
@@ -100,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 258);
+            this.label6.Location = new System.Drawing.Point(45, 306);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 6;
@@ -111,7 +115,7 @@
             this.comboBoxRoomNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRoomNumber.FormattingEnabled = true;
-            this.comboBoxRoomNumber.Location = new System.Drawing.Point(131, 165);
+            this.comboBoxRoomNumber.Location = new System.Drawing.Point(131, 213);
             this.comboBoxRoomNumber.Name = "comboBoxRoomNumber";
             this.comboBoxRoomNumber.Size = new System.Drawing.Size(170, 28);
             this.comboBoxRoomNumber.TabIndex = 7;
@@ -120,7 +124,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 215);
+            this.label5.Location = new System.Drawing.Point(58, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 6;
@@ -130,7 +134,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 173);
+            this.label1.Location = new System.Drawing.Point(6, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 6;
@@ -141,7 +145,7 @@
             this.comboBoxRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRoomType.FormattingEnabled = true;
-            this.comboBoxRoomType.Location = new System.Drawing.Point(131, 120);
+            this.comboBoxRoomType.Location = new System.Drawing.Point(131, 168);
             this.comboBoxRoomType.Name = "comboBoxRoomType";
             this.comboBoxRoomType.Size = new System.Drawing.Size(170, 28);
             this.comboBoxRoomType.TabIndex = 7;
@@ -151,7 +155,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 128);
+            this.label3.Location = new System.Drawing.Point(31, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 6;
@@ -187,6 +191,7 @@
             this.buttonEditReserv.TabIndex = 4;
             this.buttonEditReserv.Text = "Edit";
             this.buttonEditReserv.UseVisualStyleBackColor = true;
+            this.buttonEditReserv.Click += new System.EventHandler(this.buttonEditReserv_Click);
             // 
             // buttonAddReserv
             // 
@@ -210,11 +215,12 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(519, 321);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBoxClientID
             // 
             this.textBoxClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxClientID.Location = new System.Drawing.Point(131, 79);
+            this.textBoxClientID.Location = new System.Drawing.Point(131, 127);
             this.textBoxClientID.Name = "textBoxClientID";
             this.textBoxClientID.Size = new System.Drawing.Size(115, 26);
             this.textBoxClientID.TabIndex = 2;
@@ -223,7 +229,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(50, 85);
+            this.label4.Location = new System.Drawing.Point(50, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 1;
@@ -249,6 +255,25 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Manage Reservations";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ReservID";
+            // 
+            // textBoxReservId
+            // 
+            this.textBoxReservId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxReservId.Location = new System.Drawing.Point(131, 86);
+            this.textBoxReservId.Name = "textBoxReservId";
+            this.textBoxReservId.ReadOnly = true;
+            this.textBoxReservId.Size = new System.Drawing.Size(115, 26);
+            this.textBoxReservId.TabIndex = 2;
             // 
             // ManageReservationsForm
             // 
@@ -288,5 +313,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerOUT;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxReservId;
+        private System.Windows.Forms.Label label2;
     }
 }
