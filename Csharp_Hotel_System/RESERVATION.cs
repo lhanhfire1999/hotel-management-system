@@ -93,7 +93,7 @@ namespace Csharp_Hotel_System
 
         // create a function to delete the selected reservation
         // we only need the reservation id
-        public bool removeReservation(int rsv_id)
+        public bool removeReserv(int rsv_id)
         {
             MySqlCommand command = new MySqlCommand();
             String removeQuery = "DELETE FROM `reservations` WHERE `reservID`=@rvid";

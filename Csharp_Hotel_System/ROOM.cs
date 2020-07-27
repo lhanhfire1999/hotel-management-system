@@ -73,18 +73,19 @@ namespace Csharp_Hotel_System
             return Convert.ToInt32(table.Rows[0][0].ToString());
         }
 
-        // create a function to set room free column to NO
-        public bool setRoomFreeToNo(int number)
+        // create a function to set room free column to NO or YES
+        public bool setRoomFree(int number, String YES_or_NO)
         {
             //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
-            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `free`='No' WHERE `number`=@num", conn.getConnection());
+            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `free`=@yes_no WHERE `number`=@num", conn.getConnection());
 
             //DataAdapter chính là cầu nối giữa Dataset và Datasource
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
-            //@num
+            //@num,@yes_no
             command.Parameters.Add("@num", MySqlDbType.Int32).Value = number;
+            command.Parameters.Add("@yes_no", MySqlDbType.VarChar).Value = YES_or_NO;
 
             conn.openConnection();
 

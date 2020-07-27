@@ -42,12 +42,12 @@
             this.buttonEditReserv = new System.Windows.Forms.Button();
             this.buttonAddReserv = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxReservId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxClientID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxReservId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -170,6 +170,7 @@
             this.buttonRemoveReserv.TabIndex = 4;
             this.buttonRemoveReserv.Text = "Remove";
             this.buttonRemoveReserv.UseVisualStyleBackColor = true;
+            this.buttonRemoveReserv.Click += new System.EventHandler(this.buttonRemoveReserv_Click);
             // 
             // buttonClear
             // 
@@ -217,6 +218,25 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // textBoxReservId
+            // 
+            this.textBoxReservId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxReservId.Location = new System.Drawing.Point(131, 86);
+            this.textBoxReservId.Name = "textBoxReservId";
+            this.textBoxReservId.ReadOnly = true;
+            this.textBoxReservId.Size = new System.Drawing.Size(115, 26);
+            this.textBoxReservId.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ReservID";
+            // 
             // textBoxClientID
             // 
             this.textBoxClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,25 +275,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Manage Reservations";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ReservID";
-            // 
-            // textBoxReservId
-            // 
-            this.textBoxReservId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxReservId.Location = new System.Drawing.Point(131, 86);
-            this.textBoxReservId.Name = "textBoxReservId";
-            this.textBoxReservId.ReadOnly = true;
-            this.textBoxReservId.Size = new System.Drawing.Size(115, 26);
-            this.textBoxReservId.TabIndex = 2;
             // 
             // ManageReservationsForm
             // 

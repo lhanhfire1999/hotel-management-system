@@ -25,7 +25,7 @@ namespace Csharp_Hotel_System
             comboBoxRoomType.DisplayMember = "label";
             comboBoxRoomType.ValueMember = "category_id";
 
-            // display room's number depending on the selected type
+            // display free room's number depending on the selected type
             int type = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
             comboBoxRoomNumber.DataSource = room.roomByType(type);
             comboBoxRoomNumber.DisplayMember = "number";
@@ -73,11 +73,11 @@ namespace Csharp_Hotel_System
 
                 //date in must be = or > today date
                 //date out must be = or > date in
-                if(dateIn < DateTime.Now)
+                if(DateTime.Compare(dateIn.Date,DateTime.Now.Date) <0) 
                 {
-                    MessageBox.Show("The Date In Must Be > To Today Date", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The Date In Must Be = or > To Today Date", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (dateOut < dateIn)
+                else if (DateTime.Compare(dateOut.Date,dateIn.Date) <0 )
                 {
                     MessageBox.Show("The Date Out Must Be = or > To Date In", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -87,7 +87,7 @@ namespace Csharp_Hotel_System
                     {
                         // set the room free column to No
                         // you can add a message if the room is editor
-                        room.setRoomFreeToNo(roomNumber);
+                        room.setRoomFree(roomNumber,"No");
                         dataGridView1.DataSource = reservation.getAllReserv();
                         MessageBox.Show("New Reservation Added", "Add Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         buttonClear.PerformClick();
@@ -112,17 +112,17 @@ namespace Csharp_Hotel_System
             {
                 int reservID = Convert.ToInt32(textBoxReservId.Text);
                 int clientID = Convert.ToInt32(textBoxClientID.Text);
-                int roomNumber = Convert.ToInt32(comboBoxRoomNumber.SelectedValue);
+                int roomNumber = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
                 DateTime dateIn = dateTimePickerIN.Value;
                 DateTime dateOut = dateTimePickerOUT.Value;
 
                 //date in must be = or > today date
                 //date out must be = or > date in
-                if (dateIn < DateTime.Now)
+                if (DateTime.Compare(dateIn.Date, DateTime.Now.Date) < 0)
                 {
-                    MessageBox.Show("The Date In Must Be > To Today Date", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The Date In Must Be = or > To Today Date", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (dateOut < dateIn)
+                else if (DateTime.Compare(dateOut.Date, dateIn.Date) < 0)
                 {
                     MessageBox.Show("The Date Out Must Be = or > To Date In", "Invalid Date In", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -133,8 +133,8 @@ namespace Csharp_Hotel_System
                     {
                         // set the room free column to No
                         // you can add a message if the room is edited
+                        room.setRoomFree(roomNumber,"No");
                         dataGridView1.DataSource = reservation.getAllReserv();
-                        room.setRoomFreeToNo(roomNumber);
                         MessageBox.Show(" Reservation Data Updated", "Edit Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         buttonClear.PerformClick();
                     }
@@ -169,10 +169,31 @@ namespace Csharp_Hotel_System
             comboBoxRoomNumber.SelectedValue = roomId;
 
             textBoxClientID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            
+
+            dateTimePickerIN.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+            dateTimePickerOUT.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
         }
 
-        
+        private void buttonRemoveReserv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int reservId = Convert.ToInt32(textBoxReservId.Text);
+                int roomNumber = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+                if (reservation.removeReserv(reservId))
+                {
+                    //after deleting a reservation we need to set free column to 'Yes'
+                    dataGridView1.DataSource = reservation.getAllReserv();
+                    room.setRoomFree(roomNumber, "Yes");
+                    MessageBox.Show("Reservation Deleted", "Delete Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    buttonClear.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete Reservation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 
@@ -194,4 +215,6 @@ namespace Csharp_Hotel_System
  * 3.
  * - date in must be = or > today date
  * - date out must be = or > date in
+ * 
+ * => when you deleted a room or a client, all reservatio associated with them will also be deleted
  */
