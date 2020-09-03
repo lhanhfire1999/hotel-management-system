@@ -37,7 +37,7 @@ namespace Csharp_Hotel_System
         public DataTable roomByType(int type)
         {
             //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `type`=@typ and `free` ='Yes'", conn.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `type`=@typ and `available` ='Yes'", conn.getConnection());
 
             //DataAdapter chính là cầu nối giữa Dataset và Datasource
             MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -77,7 +77,7 @@ namespace Csharp_Hotel_System
         public bool setRoomFree(int number, String YES_or_NO)
         {
             //Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server
-            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `free`=@yes_no WHERE `number`=@num", conn.getConnection());
+            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `available`=@yes_no WHERE `number`=@num", conn.getConnection());
 
             //DataAdapter chính là cầu nối giữa Dataset và Datasource
             MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -108,7 +108,7 @@ namespace Csharp_Hotel_System
         public bool addRoom(int number, int type, String phone, String free)
         {
             MySqlCommand command = new MySqlCommand();
-            String insertQuery = "INSERT INTO `rooms`(`number`, `type`, `phone`, `free`) VALUES (@num,@tp,@phn,@fr)";
+            String insertQuery = "INSERT INTO `rooms`(`number`, `type`, `phone`, `available`) VALUES (@num,@tp,@phn,@fr)";
             command.CommandText = insertQuery;
             command.Connection = conn.getConnection();
 
@@ -155,7 +155,7 @@ namespace Csharp_Hotel_System
         public bool editRoom(int number, int type, String phone, String free)
         {
             MySqlCommand command = new MySqlCommand();
-            String editQuery = "UPDATE `rooms` SET `type`=@tp,`phone`=@phn,`free`=@fr WHERE `number`=@num";
+            String editQuery = "UPDATE `rooms` SET `type`=@tp,`phone`=@phn,`available`=@fr WHERE `number`=@num";
             command.CommandText = editQuery;
             command.Connection = conn.getConnection();
 

@@ -112,6 +112,7 @@ namespace Csharp_Hotel_System
             {
                 int reservID = Convert.ToInt32(textBoxReservId.Text);
                 int clientID = Convert.ToInt32(textBoxClientID.Text);
+                //int roomNumber = Convert.ToInt32(comboBoxRoomNumber.Text);
                 int roomNumber = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
                 DateTime dateIn = dateTimePickerIN.Value;
                 DateTime dateOut = dateTimePickerOUT.Value;
